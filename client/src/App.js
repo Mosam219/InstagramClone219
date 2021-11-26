@@ -49,6 +49,7 @@ function App() {
         <Routing />
       </BrowserRouter> */}
       <h1>hello from app.js</h1>
+      <Navbar />
     </UserContext.Provider>
   );
 }
