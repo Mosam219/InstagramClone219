@@ -6,6 +6,7 @@ import Navbar from './components/navbar'
 ReactDOM.render(
   <React.StrictMode>
     <Navbar />
+    <h1>hello from index</h1>
   </React.StrictMode>,
   document.getElementById('root')
 );
