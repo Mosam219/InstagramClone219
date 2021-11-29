@@ -44,10 +44,11 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <UserContext.Provider value={{ state, dispatch }}>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Navbar />
         <Routing />
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <h1>hello</h1>
     </UserContext.Provider>
   );
 }
