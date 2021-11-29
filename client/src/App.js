@@ -45,7 +45,15 @@ function App() {
     <UserContext.Provider value={{ state, dispatch }}>
       <BrowserRouter>
         <Navbar />
-        <Routing />
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/profile" component={Profile}><Profile /></Route>
+          <Route path="/signup" component={SignUp}><SignUp /></Route>
+          <Route path="/login" component={Login}><Login /></Route>
+          <Route path="/create" component={CreatePost}><CreatePost /></Route>
+          <Route path="/profile/:userid" component={UserProfile}><UserProfile /></Route>
+          <Route path="/myfollowerspost" component={SubscribeUserPost}><SubscribeUserPost /></Route>
+        </Switch>
       </BrowserRouter>
     </UserContext.Provider>
   );
