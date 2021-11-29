@@ -29,7 +29,7 @@ const Routing = () => {
   return (
     // <Home />
     // <Switch>
-    <Route exact path="/"><Home /></Route>
+    <Route exact path="/"><h1>hello</h1></Route>
     //   <Route exact path="/profile"><Profile /></Route>
     //   <Route path="/signup"><SignUp /></Route>
     //   <Route path="/login"><Login /></Route>
