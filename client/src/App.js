@@ -18,12 +18,12 @@ const Routing = () => {
   const { state, dispatch } = useContext(UserContext)
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"))
-    if (user) {
+    if (user != null) {
       dispatch({ type: "USER" })
     } else {
       history.push('/login')
     }
-  }, [])  
+  }, [])
   return (
     <Switch>
       <Route exact path="/" component={Home}><Home /></Route>
