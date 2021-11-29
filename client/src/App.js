@@ -14,26 +14,26 @@ import { useEffect } from 'react/cjs/react.development'
 export const UserContext = createContext()
 
 const Routing = () => {
-  const history = useHistory()
+  // const history = useHistory()
   const { state, dispatch } = useContext(UserContext)
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"))
     if (user) {
       dispatch({ type: "USER", payload: user })
     } else {
-      if (!history.location.pathname.startsWith('/reset'))
-        history.push('/login')
+      // if (!history.location.pathname.startsWith('/reset'))
+      //   history.push('/login')
     }
   }, [])
   return (
     <Switch>
-      {/* <Route exact path="/" component={Home}><Home /></Route> */}
-      <Route exact path="/profile" component={Profile}><Profile /></Route>
+      <Route exact path="/"><h1>hello</h1></Route>
+      {/* <Route exact path="/profile" component={Profile}><Profile /></Route>
       <Route path="/signup" component={SignUp}><SignUp /></Route>
       <Route path="/login" component={Login}><Login /></Route>
       <Route path="/create" component={CreatePost}><CreatePost /></Route>
       <Route path="/profile/:userid" component={UserProfile}><UserProfile /></Route>
-      <Route path="/myfollowerspost" component={SubscribeUserPost}><SubscribeUserPost /></Route>
+      <Route path="/myfollowerspost" component={SubscribeUserPost}><SubscribeUserPost /></Route> */}
     </Switch>
   )
 }
