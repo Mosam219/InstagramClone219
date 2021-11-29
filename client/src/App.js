@@ -14,17 +14,11 @@ import { useEffect } from 'react/cjs/react.development'
 export const UserContext = createContext()
 
 const Routing = () => {
-  // const history = useHistory()
+  const history = useHistory()
   // const { state, dispatch } = useContext(UserContext)
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("user"))
-  //   if (user) {
-  //     dispatch({ type: "USER", payload: user })
-  //   } else {
-  //     // if (!history.location.pathname.startsWith('/reset'))
-  //     //   history.push('/login')
-  //   }
-  // }, [])
+  useEffect(() => {
+    history.push('/login')
+  }, [])
   return (
     <Switch>
       <Route exact path="/" component={Home}><Home /></Route>
