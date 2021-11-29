@@ -14,11 +14,11 @@ import { useEffect } from 'react/cjs/react.development'
 export const UserContext = createContext()
 
 const Routing = () => {
-  // const history = useHistory()
-  // const { state, dispatch } = useContext(UserContext)
-  // useEffect(() => {
-  //   history.push('/login')
-  // }, [])
+  const history = useHistory()
+  const { state, dispatch } = useContext(UserContext)
+  useEffect(() => {
+    history.push('/login')
+  }, [])
   return (
     <Switch>
       <Route exact path="/" component={Home}><Home /></Route>
