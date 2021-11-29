@@ -11,9 +11,7 @@ const Profile = () => {
             }
         }).then(res => res.json())
             .then(result => {
-                console.log(result.mypost)
                 setMyPic(result.mypost)
-                console.log(myPic)
             })
     }, [])
     useEffect(() => {
