@@ -52,11 +52,10 @@ function App() {
     else {
       history.push('/login')
     }
-  }, []);
+  }, [])
   return (
     <UserContext.Provider value={{ state, dispatch }}>
       <BrowserRouter>
-        <Navbar />
         <Switch>
           <Route exact path="/" component={Home}><Home /></Route>
           <Route exact path="/profile" component={Profile}><Profile /></Route>
