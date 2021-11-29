@@ -27,16 +27,15 @@ const Routing = () => {
     }
   }, [])
   return (
-    // <Home />
-    // <Switch>
-    <Route exact path="/"><h1>hello</h1></Route>
-    //   <Route exact path="/profile"><Profile /></Route>
-    //   <Route path="/signup"><SignUp /></Route>
-    //   <Route path="/login"><Login /></Route>
-    //   <Route path="/create"><CreatePost /></Route>
-    //   <Route path="/profile/:userid"><UserProfile /></Route>
-    //   <Route path="/myfollowerspost"><SubscribeUserPost /></Route>
-    // </Switch>
+    <Switch>
+      <Route exact path="/" component={Home}></Route>
+      <Route exact path="/profile" component={Profile}><Profile /></Route>
+      <Route path="/signup" component={SignUp}><SignUp /></Route>
+      <Route path="/login" component={Login}><Login /></Route>
+      <Route path="/create" component={CreatePost}><CreatePost /></Route>
+      <Route path="/profile/:userid" component={UserProfile}><UserProfile /></Route>
+      <Route path="/myfollowerspost" component={SubscribeUserPost}><SubscribeUserPost /></Route>
+    </Switch>
   )
 }
 
@@ -44,11 +43,10 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <UserContext.Provider value={{ state, dispatch }}>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Navbar />
         <Routing />
-      </BrowserRouter> */}
-      <h1>hello</h1>
+      </BrowserRouter>
     </UserContext.Provider>
   );
 }
