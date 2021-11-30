@@ -10,11 +10,11 @@ import CreatePost from './components/screen/createPost'
 import SubscribeUserPost from './components/screen/SubscribesUser'
 import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom'
 import { reducer, initialState } from './reducers/userReducer'
-import { useEffect } from 'react/cjs/react.development'
+import { useEffect } from 'react'
 export const UserContext = createContext()
 
 const Routing = () => {
-  const history = useHistory()
+  // const history = useHistory()
   // const { state, dispatch } = useContext(UserContext)
   // useEffect(() => {
   //   const user = JSON.parse(localStorage.getItem("user"))

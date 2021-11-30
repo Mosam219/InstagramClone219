@@ -1,10 +1,22 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../../App'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router';
 const Home = () => {
     const [data, setData] = useState([])
     const { state, dispatch } = useContext(UserContext)
+    const history = useHistory()
+    // const dp = localStorage.getItem("jwt");
+    // console.log(dp)
+    // if (dp == null) {
+    //     <Redirect to="/login" />
+    // }
     useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"))
+        if (!user) {
+            history.push('/login')
+        }
+        dispatch({ type: "USER", payload: user })
         fetch('/allposts', {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
@@ -12,6 +24,7 @@ const Home = () => {
         })
             .then(res => res.json())
             .then(result => {
+                console.log(result)
                 setData(result.posts)
             })
     }, [])
