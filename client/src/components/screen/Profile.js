@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../App'
 import { useHistory } from 'react-router';
+import '../css/Profile.css'
 const Profile = () => {
     const [myPic, setMyPic] = useState([])
     const [image, setImage] = useState("")
@@ -50,7 +51,7 @@ const Profile = () => {
         setImage(file)
     }
     return (
-        < div style={{ maxWidth: "650px", margin: "0px auto" }}>
+        < div className="profile">
             <div style={{
                 display: "flex",
                 justifyContent: "space-around",

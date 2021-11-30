@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../../App'
 import { Link, useHistory } from 'react-router-dom';
 import { Redirect } from 'react-router';
+import '../css/Home.css'
 const Home = () => {
     const [data, setData] = useState([])
     const { state, dispatch } = useContext(UserContext)
@@ -100,9 +101,11 @@ const Home = () => {
                 data.map(item => {
                     return (
                         <div className="card home-card" key={item._id}>
-                            <h5><Link to={item.postedBy._id !== state._id ? "/profile/" + item.postedBy._id : "/profile"}>{item.postedBy.name}</Link>{item.postedBy._id == state._id &&
-                                <i className="material-icons" style={{ float: "right" }} onClick={() => deletePost(item._id)}>delete</i>
-                            }</h5>
+                            <div className="card-head">
+                                <h5><Link to={item.postedBy._id !== state._id ? "/profile/" + item.postedBy._id : "/profile"}>{item.postedBy.name}</Link>{item.postedBy._id == state._id &&
+                                    <i className="material-icons" style={{ float: "right" }} onClick={() => deletePost(item._id)}>delete</i>
+                                }</h5>
+                            </div>
                             <div className="card-image">
                                 <img src={item.photo} />
                             </div>
@@ -127,8 +130,8 @@ const Home = () => {
                                 }
                                 <form onSubmit={(e) => {
                                     e.preventDefault()
-                                    // console.log(e.target[0].value)
                                     makeComment(e.target[0].value, item._id)
+                                    e.target[0].value = ""
                                 }}>
                                     <input type="text" placeholder="add a comment" />
                                 </form>

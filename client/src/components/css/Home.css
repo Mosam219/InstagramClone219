@@ -1,3 +1,14 @@
 .home{
     margin-top: 100px;
 }
+.card{
+    border: 0.8px solid black;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px;
+}
+.card-head{ 
+    padding: 3px;
+}
+.card-head h5{
+    margin-left: 10px;
+}

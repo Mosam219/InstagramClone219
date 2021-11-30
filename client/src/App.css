@@ -5,9 +5,6 @@ a{
 .brand-logo,h2{
   font-family: 'Grand Hotel', cursive;
 }
-.mycard{
-  margin-top: 30px;
-}
 .auth-card{
   padding: 40px;
   text-align: center;
@@ -35,4 +32,5 @@ a{
 }
 i{
   cursor: pointer;
+  margin-right: 10px;
 }

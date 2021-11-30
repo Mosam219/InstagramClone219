@@ -12,7 +12,7 @@ const Navbar = () => {
                 <li><Link to="/create">Create Post</Link></li>,
                 <li><Link to="/myfollowerspost">My following Posts</Link></li>,
                 <li>
-                    <button className="btn waves-effect #64b5f6 red" onClick={() => {
+                    <button className="btn waves-effect" onClick={() => {
                         localStorage.clear()
                         dispatch({ type: "CLEAR" })
                         history.push('/login')
@@ -30,7 +30,7 @@ const Navbar = () => {
     }
     return (
         <nav>
-            <div className="white">
+            <div className="nav-wrapper white">
                 <Link to={state ? "/" : "/login"} className="brand-logo left">Instagram</Link>
                 <ul id="nav-mobile" className="right">
                     {renderList()}
