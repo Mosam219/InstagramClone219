@@ -49,6 +49,11 @@ const Login = () => {
                     Login
                 </button>
                 <h5><Link to="/signup">Don't have an account</Link></h5>
+                <div className="notice">
+                    <h6>If you want to test this app use this credentials</h6>
+                    <h7>Email    : test@test.com</h7>
+                    <h7>Password : 12345</h7>
+                </div>
             </div>
         </div>
     )

@@ -1,3 +1,14 @@
 .mycard{
     margin-top: 100px;
 }
+.card{
+    margin: 0px auto;
+}
+.notice{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 0.1px solid black;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
