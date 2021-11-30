@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from '../App'
+import './css/navbar.css'
 const Navbar = () => {
     const { state, dispatch } = useContext(UserContext)
     const history = useHistory()
@@ -29,7 +30,7 @@ const Navbar = () => {
     }
     return (
         <nav>
-            <div className="nav-wrapper white">
+            <div className="white">
                 <Link to={state ? "/" : "/login"} className="brand-logo left">Instagram</Link>
                 <ul id="nav-mobile" className="right">
                     {renderList()}

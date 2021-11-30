@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../App'
+import { useHistory } from 'react-router';
 const Profile = () => {
     const [myPic, setMyPic] = useState([])
     const [image, setImage] = useState("")
@@ -49,7 +50,7 @@ const Profile = () => {
         setImage(file)
     }
     return (
-        <div style={{ maxWidth: "650px", margin: "0px auto" }}>
+        < div style={{ maxWidth: "650px", margin: "0px auto" }}>
             <div style={{
                 display: "flex",
                 justifyContent: "space-around",
@@ -87,7 +88,7 @@ const Profile = () => {
                     })
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

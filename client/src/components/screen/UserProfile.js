@@ -1,12 +1,20 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../App'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
+import '../css/Profile.css'
 const Profile = () => {
     const [userProfile, setUserProfile] = useState(null)
 
     const { state, dispatch } = useContext(UserContext)
     const { userid } = useParams()
     const [showfollow, setshowfollow] = useState(state ? (!state.following.includes(userid)) : true)
+    // const history = useHistory()
+    // const user = JSON.parse(localStorage.getItem("user"))
+    // const jwt = JSON.parse(localStorage.getItem("jwt"))
+    // if (user == null && jwt == null) {
+    //     history.push('/login')
+    // }
+    // dispatch({ type: "USER", payload: user })
     useEffect(() => {
         fetch(`/user/${userid}`, {
             headers: {
@@ -71,7 +79,7 @@ const Profile = () => {
             })
     }
     return (
-        <>
+        <div className="profile">
             {userProfile ?
                 <div style={{ maxWidth: "650px", margin: "0px auto" }}>
                     <div style={{
@@ -115,7 +123,7 @@ const Profile = () => {
                 :
                 <h2>loading...</h2>
             }
-        </>
+        </div>
     )
 }
 
