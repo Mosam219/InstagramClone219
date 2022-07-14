@@ -11,6 +11,7 @@ router.get('/allposts', requireLogin, (req, res) => {
         console.log(err)
     })
 })
+
 router.get('/getsubposts', requireLogin, (req, res) => {
     Post.find({ postedBy: { $in: req.user.following } }).populate("postedBy", "name _id").populate("comments.postedBy", "_id name").then(posts => {
         res.json({ posts })

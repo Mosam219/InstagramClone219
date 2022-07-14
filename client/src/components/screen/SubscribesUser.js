@@ -4,13 +4,6 @@ import { Link, useHistory } from 'react-router-dom';
 const SubscribeUserPost = () => {
     const [data, setData] = useState([])
     const { state, dispatch } = useContext(UserContext)
-    // const history = useHistory()
-    // const user = JSON.parse(localStorage.getItem("user"))
-    // const jwt = JSON.parse(localStorage.getItem("jwt"))
-    // if (user == null && jwt == null) {
-    //     history.push('/login')
-    // }
-    // dispatch({ type: "USER", payload: user })
     useEffect(() => {
         fetch('/getsubposts', {
             headers: {
